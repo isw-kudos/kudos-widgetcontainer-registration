@@ -26,11 +26,11 @@ Copy the files from this repository on to your server. [Download link](https://g
 
 Run each of the appropriate wsadmin scripts (.py) for the Kudos products you have installed. Using your connections admin user.
 
-    `./wsadmin.sh -lang jython -username <USERNAME> -password <PASSWORD> -f /KudosScriptsDirectory/<SCRIPT NAME>.py <YOUR SERVER FQDN>`
+    ./wsadmin.sh -lang jython -username <USERNAME> -password <PASSWORD> -f /KudosScriptsDirectory/<SCRIPT NAME>.py <YOUR SERVER FQDN>
 
 Example for Kudos Badges:
 
-    `./wsadmin.sh -lang jython -username connectionsadmin -password P@ssw0rd1! -f /KudosScriptsDirectory/registerKudosBadgesWidgets.py connections.isw.net.au`
+    ./wsadmin.sh -lang jython -username connectionsadmin -password P@ssw0rd1! -f /KudosScriptsDirectory/registerKudosBadgesWidgets.py connections.isw.net.au
 
 
 To address the known issue above we have written a small SQL query to modify our widgets to be hidden from Homepage the same way IBM have done with their Communities/Profiles widgets. This was derived from the SQL update scrips IBM provided for CR1.

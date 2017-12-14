@@ -22,7 +22,7 @@ We have provided a workaround for Kudos widgets included in the _Steps_ section
 __Kudos Badges/Analytics requires version 5.0.4.__ [Download and install from here](http://kudosbadges.com/domino/isw/kudos/kudosweb.nsf/downloads/Kudos%20Downloads).
 This version is expected to be released December 15th (GMT+10).
 
-Copy the files from this repository on to your server. [https://github.com/isw-kudos/kudos-widgetcontainer-registration/archive/master.zip](Download link).
+Copy the files from this repository on to your server. [Download link](https://github.com/isw-kudos/kudos-widgetcontainer-registration/archive/master.zip).
 
 Run each of the appropriate wsadmin scripts (.py) for the Kudos products you have installed. Using your connections admin user.
 

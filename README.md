@@ -11,7 +11,7 @@ Scripts for registering Kudos Communities/Profiles widgets with WidgetContainer.
 [Updating the IBM Connections 6.0 databases to the required schema versions for Cumulative Refresh 1 (CR1)](http://www-01.ibm.com/support/docview.wss?uid=swg22009306)
 
 ## Known Issues
-Following the IBM provided steps to register widgets Community/Profiles widgets with the WidgetContainer can:
+Following the IBM provided steps to register Communities/Profiles widgets with the WidgetContainer can:
  - make widgets appear in Homepage/My Page widget palette ('Customize' pane)
  - cause the Homepage/My Page widget palette to fail to render and prevent users from adding other widgets to their My Page
 
@@ -33,7 +33,7 @@ Example for Kudos Badges:
     ./wsadmin.sh -lang jython -username connectionsadmin -password P@ssw0rd1! -f /KudosScriptsDirectory/registerKudosBadgesWidgets.py connections.isw.net.au
 
 
-To address the known issue above we have written a small SQL query to modify our widgets to be hidden from Homepage the same way IBM have done with their Communities/Profiles widgets. This was derived from the SQL update scrips IBM provided for CR1.
+To address the known issue above we have written a small SQL query to modify our widgets to be hidden from Homepage the same way IBM have done with their Communities/Profiles widgets. This was derived from the SQL update scripts IBM provided for CR1.
 
 Run the `kudosWidgetsHiddenPane.sql` script against your HOMEPAGE database. This may not be required in the future once the PMR has been resolved.
 

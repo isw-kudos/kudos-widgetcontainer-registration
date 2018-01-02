@@ -4,18 +4,12 @@
 #
 # NOTE:
 # Kudos News Gadget must still be created manually as per Install Guide!
-# Kudos Leaderboard still needs to be set as "Display on Updates page" instead of My Page using Homepage Administration
 
 servername = sys.argv[0]
 kudosContext = "Kudos" # Change this if you have a different context root than https://servername/Kudos/
 
-http = "http://"
-https = "https://"
-
-kudosRoot = http+servername+"/"+kudosContext
-secureKudosRoot = https+servername+"/"+kudosContext
-
-
+kudosRoot = "http://"+servername+"/"+kudosContext
+secureKudosRoot = "https://"+servername+"/"+kudosContext
 
 #Profiles Widgets
 awardSummaryURL		=		[kudosRoot+"/AwardSummaryDisplay.xml",		secureKudosRoot+"/AwardSummaryDisplay.xml"]
@@ -71,8 +65,7 @@ NewsWidgetCatalogService.enableWidget(NewsWidgetCatalogService.addWidget(	title=
 
 #Homepage widgets
 NewsWidgetCatalogService.enableWidget(NewsWidgetCatalogService.addWidget(	title="Kudos Awarder",					url=kudosAwarderURL[0],	secureUrl=kudosAwarderURL[1],		 categoryName="OTHER", isHomepageSpecific=0,	isDefaultOpened=0,	multipleInstanceAllowed=0,	isGadget=0, appContexts=["WIDGET"]))
-# Leaderboard still needs to be set as "Display on Updates page" instead of My Page using Homepage Administration
-NewsWidgetCatalogService.enableWidget(NewsWidgetCatalogService.addWidget(	title="Kudos Leaderboard",				url=leaderboardURL[0],	secureUrl=leaderboardURL[1],		 categoryName="OTHER", isHomepageSpecific=0,	isDefaultOpened=1,	multipleInstanceAllowed=0,	isGadget=0, prereqs=['profiles'],	appContexts=["WIDGET"]))
+NewsWidgetCatalogService.enableWidget(NewsWidgetCatalogService.addWidget(	title="Kudos Leaderboard",				url=leaderboardURL[0],	secureUrl=leaderboardURL[1],		 categoryName="OTHER", isHomepageSpecific=0,	isDefaultOpened=1,	multipleInstanceAllowed=0,	isGadget=0, prereqs=['profiles'],	appContexts=["UPDATE"]))
 
 
 NewsWidgetCatalogService.clearWidgetCaches()

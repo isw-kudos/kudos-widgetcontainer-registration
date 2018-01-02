@@ -1,6 +1,8 @@
 # Example usage:
 # cd /opt/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/
 # ./wsadmin.sh -lang jython -username connectionsadmin -password <YOURPASSWORD> -f /KudosScriptsDirectory/registerKudosBoardsWidgets.py <YOUR SERVER FQDN e.g. devconn6.internal.isw.net.au>
+#
+# This script is the same as for updating to C6 CR1. We're just adding the single communities widget for Boards.
 
 servername = sys.argv[0]
 boardsContext = "kudosboards" # Change this if you have a different context root than https://servername/kudosboards/
@@ -21,4 +23,4 @@ boards = NewsWidgetCatalogService.addWidget( title="Kudos Boards", url=boardsWid
 NewsWidgetCatalogService.enableWidget(boards)
 NewsWidgetCatalogService.clearWidgetCaches()
 
-print "\nApplication Servers running Homepage need to be restarted after registering widgets.\n"
+print "\nApplication Servers need to be restarted after registering widgets.\n"

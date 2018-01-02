@@ -5,12 +5,8 @@
 servername = sys.argv[0]
 kudosContext = "Kudos" # Change this if you have a different context root than https://servername/Kudos/
 
-http = "http://"
-https = "https://"
-
-kudosRoot = http+servername+"/"+kudosContext
-secureKudosRoot = https+servername+"/"+kudosContext
-
+kudosRoot = "http://"+servername+"/"+kudosContext
+secureKudosRoot = "https://"+servername+"/"+kudosContext
 
 awardSummaryURL		=		[kudosRoot+"/AwardSummaryDisplay.xml",		secureKudosRoot+"/AwardSummaryDisplay.xml"]
 awardViewAllURL		=		[kudosRoot+"/AwardViewAll.xml",				secureKudosRoot+"/AwardViewAll.xml"]
@@ -40,7 +36,7 @@ print metricsConfigURL[1]
 raw_input("Press ENTER to confirm and continue. CTRL+C to exit.")
 execfile("newsAdmin.py")
 
- 
+
 NewsWidgetCatalogService.enableWidget(NewsWidgetCatalogService.addWidget(	title="Kudos Awards Summary",			url=awardSummaryURL[0],		secureUrl=awardSummaryURL[1],		 categoryName=WidgetCategories.NONE, isHomepageSpecific=0,	isDefaultOpened=0,	multipleInstanceAllowed=0,	isGadget=0,	policyFlags=[GadgetPolicyFlags.TRUSTED], 	prereqs=['profiles'],	appContexts=["EMBEDXP"]))
 NewsWidgetCatalogService.enableWidget(NewsWidgetCatalogService.addWidget(	title="Kudos Awards",					url=awardViewAllURL[0],		secureUrl=awardViewAllURL[1],		 categoryName=WidgetCategories.NONE, isHomepageSpecific=0,	isDefaultOpened=0,	multipleInstanceAllowed=0,	isGadget=0,	policyFlags=[GadgetPolicyFlags.TRUSTED], 	prereqs=['profiles'],	appContexts=["EMBEDXP"]))
 NewsWidgetCatalogService.enableWidget(NewsWidgetCatalogService.addWidget(	title="Kudos Badges Summary",			url=badgeSummaryURL[0],		secureUrl=badgeSummaryURL[1],		 categoryName=WidgetCategories.NONE, isHomepageSpecific=0,	isDefaultOpened=0,	multipleInstanceAllowed=0,	isGadget=0,	policyFlags=[GadgetPolicyFlags.TRUSTED], 	prereqs=['profiles'],	appContexts=["EMBEDXP"]))

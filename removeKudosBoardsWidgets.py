@@ -1,6 +1,6 @@
 # Example usage:
 # cd /opt/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/
-# ./wsadmin.sh -lang jython -username connectionsadmin -password <YOURPASSWORD> -f /KudosScriptsDirectory/registerKudosBoardsWidgets.py <YOUR SERVER FQDN e.g. devconn6.internal.isw.net.au>
+# ./wsadmin.sh -lang jython -username connectionsadmin -password <YOURPASSWORD> -f /KudosScriptsDirectory/removeKudosBoardsWidgets.py <YOUR SERVER FQDN e.g. devconn6.internal.isw.net.au>
 
 servername = sys.argv[0]
 boardsContext = "kudosboards" # Change this if you have a different context root than https://servername/kudosboards/
@@ -12,12 +12,12 @@ boardsWidgetURL = [boardsRoot+"/communityBoards", secureBoardsRoot+"/communityBo
 
 print "\n"
 print "Server name is: "+servername
-print "\n--Registering Widgets-- "
+print "\n--REMOVING Widgets-- "
 print boardsWidgetURL[0]
 raw_input("Press ENTER to confirm and continue. CTRL+C to exit.")
 execfile("newsAdmin.py")
 
-NewsWidgetCatalogService.addWidget( enabled=1, title="Kudos Boards", url=boardsWidgetURL[0] ,secureUrl=boardsWidgetURL[1], categoryName=WidgetCategories.NONE, isHomepageSpecific=0, isDefaultOpened=0, multipleInstanceAllowed=0, isGadget=0, policyFlags=[GadgetPolicyFlags.TRUSTED], prereqs=['profiles','communities','activities'], appContexts=["IWIDGETS"])
+NewsWidgetCatalogService.removeWidget(NewsWidgetCatalogService.findWidgetByUrl(boardsWidgetURL[0])["widgetId"])
 NewsWidgetCatalogService.clearWidgetCaches()
 
 print "\nAll IBM Connections application servers need to be restarted after registering widgets.\n"

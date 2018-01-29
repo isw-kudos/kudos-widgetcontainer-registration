@@ -10,17 +10,17 @@ Scripts for registering Kudos Communities/Profiles widgets with WidgetContainer.
 
 [Updating the IBM Connections 6.0 databases to the required schema versions for Cumulative Refresh 1 (CR1)](http://www-01.ibm.com/support/docview.wss?uid=swg22009306)
 
-## Known Issues
-Following the IBM provided steps to register Communities/Profiles widgets with the WidgetContainer can:
- - make widgets appear in Homepage/My Page widget palette ('Customize' pane)
- - cause the Homepage/My Page widget palette to fail to render and prevent users from adding other widgets to their My Page
+## Prerequisites
+[IBM Connections 6 CR1 Installed](http://www-01.ibm.com/support/docview.wss?uid=swg21999492)
 
-IBM have reproduced this in PMR# 40193,756,000.
-We have provided a workaround for Kudos widgets included in the _Steps_ section
+[IBM Connections 6 CR1 database update scripts run](http://www-01.ibm.com/support/docview.wss?uid=swg22009306)
+
+[Kudos Badges/Analytics v5.0.4+](http://kudosbadges.com/domino/isw/kudos/kudosweb.nsf/downloads/Kudos%20Downloads).
+
+[Kudos Boards v3.0.0+](http://kudosbadges.com/domino/isw/kudos/kudosweb.nsf/downloads/Kudos%20Boards%20Downloads)
 
 ## Steps
-__Kudos Badges/Analytics requires version 5.0.4.__ [Download and install from here](http://kudosbadges.com/domino/isw/kudos/kudosweb.nsf/downloads/Kudos%20Downloads).
-This version is expected to be released December 15th (GMT+10).
+
 
 Copy the files from this repository on to your server. [Download link](https://github.com/isw-kudos/kudos-widgetcontainer-registration/archive/master.zip).
 
@@ -32,13 +32,6 @@ Example for Kudos Badges:
 
     ./wsadmin.sh -lang jython -username connectionsadmin -password P@ssw0rd1! -f /KudosScriptsDirectory/registerKudosBadgesWidgets.py connections.isw.net.au
 
-
-To address the known issue above we have written a small SQL query to modify our widgets to be hidden from Homepage the same way IBM have done with their Communities/Profiles widgets. This was derived from the SQL update scripts IBM provided for CR1.
-
-Run the `kudosWidgetsHiddenPane.sql` script against your HOMEPAGE database. This may not be required in the future once the PMR has been resolved.
-
 Restart all application servers running Connections applications.
 
 All Kudos Widgets should now be registered and working OK. Test this by opening a Community that has a Kudos widget and a Profiles page.
-
-Test that your My Page widgets palette is working by clicking 'Customize' in the top right corner of Homepage/My Page.

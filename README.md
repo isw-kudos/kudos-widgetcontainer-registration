@@ -35,3 +35,9 @@ Example for Kudos Badges:
 Restart all application servers running Connections applications.
 
 All Kudos Widgets should now be registered and working OK. Test this by opening a Community that has a Kudos widget and a Profiles page.
+
+## Other Notes
+- Widget Registration must be completed for ALL third party widgets. These scripts will only register/update widgets for Kudos products.
+If you have widgets from other products (OnTime, XCC, custom/in-house) you will also need to complete similar steps for those products and widgets. You are welcome to adapt the code provided here for other widgets.
+
+- All widget URLs must be absolute. Relative URLs will cause the widgets to fail loading. Check the output of printAllWidgets.py for any relative URLs. 

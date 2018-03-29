@@ -21,6 +21,7 @@ Scripts for registering Kudos Communities/Profiles widgets with WidgetContainer.
 
 ## Steps
 
+Ensure the prerequisites above have already been completed/installed.
 
 Copy the files from this repository on to your server. [Download link](https://github.com/isw-kudos/kudos-widgetcontainer-registration/archive/master.zip).
 
@@ -30,9 +31,9 @@ Run each of the appropriate wsadmin scripts (.py) for the Kudos products you hav
 
 Example for Kudos Badges:
 
-    ./wsadmin.sh -lang jython -username connectionsadmin -password P@ssw0rd1! -f /KudosScriptsDirectory/registerKudosBadgesWidgets.py connections.isw.net.au
+    ./wsadmin.sh -lang jython -username connectionsadmin -password P@ssw0rd1! -f /KudosScriptsDirectory/registerBadgesProfCommWidgets.py connections.isw.net.au
 
-Restart all application servers running Connections applications.
+Restart all clusters running Connections applications.
 
 All Kudos Widgets should now be registered and working OK. Test this by opening a Community that has a Kudos widget and a Profiles page.
 
@@ -40,4 +41,9 @@ All Kudos Widgets should now be registered and working OK. Test this by opening 
 - Widget Registration must be completed for ALL third party widgets. These scripts will only register/update widgets for Kudos products.
 If you have widgets from other products (OnTime, XCC, custom/in-house) you will also need to complete similar steps for those products and widgets. You are welcome to adapt the code provided here for other widgets.
 
-- All widget URLs must be absolute. Relative URLs will cause the widgets to fail loading. Check the output of printAllWidgets.py for any relative URLs. 
+- All widget URLs must be absolute. Relative URLs will cause the widgets to fail loading. Check the output of printAllWidgets.py for any relative URLs.
+
+- Your browser can cache the definitions of widgets received from the server even if they are not working. Be sure to test loading the changed widgets without a browser cache whenever the Connections widget cache is cleared. Either by clearing your browser cache or using an incognito/private browsing session.
+
+- This trace string will output detailed logs for the WidgetContainer application: `*=info:com.ibm.cre*=all`
+Search for `was not allowed for container` to find the URLs that have not been registered properly.

@@ -20,7 +20,7 @@ def registerBoardsCommWidgets():
     print boardsWidgetURL
     raw_input("Press ENTER to confirm and continue. CTRL+C to exit.")
 
-    NewsWidgetCatalogService.addWidget( enabled=1, title="Kudos Boards", url=boardsWidgetURL , categoryName=WidgetCategories.NONE, isHomepageSpecific=0, isDefaultOpened=0, multipleInstanceAllowed=0, isGadget=0, policyFlags=[GadgetPolicyFlags.TRUSTED], prereqs=['profiles','communities','activities'], appContexts=["IWIDGETS"])
+    NewsWidgetCatalogService.addWidget( enabled=1, title="Kudos Boards", url=boardsWidgetURL , categoryName="profiles", isHomepageSpecific=0, isDefaultOpened=0, multipleInstanceAllowed=0, isGadget=0, policyFlags=[GadgetPolicyFlags.TRUSTED], prereqs=['profiles','communities','activities'], appContexts=["IWIDGETS"])
     NewsWidgetCatalogService.clearWidgetCaches()
 
     print "\nAll clusters running IBM Connections applications need to be restarted after registering widgets.\n"

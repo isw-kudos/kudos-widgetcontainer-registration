@@ -41,7 +41,9 @@ All Kudos Widgets should now be registered and working OK. Test this by opening 
 - Widget Registration must be completed for ALL third party widgets. These scripts will only register/update widgets for Kudos products.
 If you have widgets from other products (OnTime, XCC, custom/in-house) you will also need to complete similar steps for those products and widgets. You are welcome to adapt the code provided here for other widgets.
 
-- All widget URLs must be absolute. Relative URLs will cause the widgets to fail loading. Check the output of printAllWidgets.py for any relative URLs.
+- All registered widget URLs must be absolute. These scripts will always register absolute URLs. However, if you're doing your own thing you should know that relative URLs will cause the widgets to fail loading. Check the output of printAllWidgets.py for any relative URLs.
+
+- These scripts will only register https:// URLs. If your widget-config.xml is using relative URLs for these widgets and you access Connections over http:// the widgets will fail to load.
 
 - Your browser can cache the definitions of widgets received from the server even if they are not working. Be sure to test loading the changed widgets without a browser cache whenever the Connections widget cache is cleared. Either by clearing your browser cache or using an incognito/private browsing session.
 

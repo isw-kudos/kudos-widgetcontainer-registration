@@ -20,7 +20,7 @@ def registerAnalyticsCommWidget():
     print analyticsWidgetURL
     raw_input("Press ENTER to confirm and continue. CTRL+C to exit.")
 
-    NewsWidgetCatalogService.addWidget(   enabled=1,	title="Kudos Analytics",	url=analyticsWidgetURL,	categoryName=WidgetCategories.NONE, isHomepageSpecific=0,	isDefaultOpened=0,	multipleInstanceAllowed=1,	isGadget=0,	policyFlags=[GadgetPolicyFlags.TRUSTED], 	prereqs=['profiles', 'communities'],	appContexts=["IWIDGETS"])
+    NewsWidgetCatalogService.addWidget(   enabled=1,	title="Kudos Analytics",	url=analyticsWidgetURL,	categoryName="profiles", isHomepageSpecific=0,	isDefaultOpened=0,	multipleInstanceAllowed=1,	isGadget=0,	policyFlags=[GadgetPolicyFlags.TRUSTED], 	prereqs=['profiles', 'communities'],	appContexts=["IWIDGETS"])
     NewsWidgetCatalogService.clearWidgetCaches()
 
     print "\nAll clusters running IBM Connections applications need to be restarted after registering widgets.\n"

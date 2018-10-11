@@ -1,8 +1,8 @@
 # kudos-widgetcontainer-registration
-Scripts for registering Kudos Communities/Profiles widgets with WidgetContainer. __Applicable to Connections 6 CR1__.
+Scripts for registering Kudos Communities/Profiles widgets with WidgetContainer. __Applicable to Connections 6 CR1 onwards__.
 
 ## Resources
-[IBM Connections 6.0 CR1 requires all widgets to be registered in the Widget Container](http://www-01.ibm.com/support/docview.wss?uid=swg22011111)
+[IBM Connections 6.0 CR1 onwards requires all widgets to be registered in the Widget Container](http://www-01.ibm.com/support/docview.wss?uid=swg22011111)
 
 [IBM Knowledge Center - Gadget registration commands - Administering - Connections](https://www.ibm.com/support/knowledgecenter/SSYGQH_6.0.0/admin/admin/r_admin_gadget_reg_ws_commands.html)
 
@@ -11,9 +11,9 @@ Scripts for registering Kudos Communities/Profiles widgets with WidgetContainer.
 [Updating the IBM Connections 6.0 databases to the required schema versions for Cumulative Refresh 1 (CR1)](http://www-01.ibm.com/support/docview.wss?uid=swg22009306)
 
 ## Prerequisites
-[IBM Connections 6 CR1 Installed](http://www-01.ibm.com/support/docview.wss?uid=swg21999492)
+[IBM Connections 6 CR1 or later Installed](http://www-01.ibm.com/support/docview.wss?uid=swg21999492)
 
-[IBM Connections 6 CR1 database update scripts run](http://www-01.ibm.com/support/docview.wss?uid=swg22009306)
+[IBM Connections 6 CR1 or later database update scripts run](http://www-01.ibm.com/support/docview.wss?uid=swg22009306)
 
 [Kudos Badges/Analytics v5.0.4+](http://kudosbadges.com/domino/isw/kudos/kudosweb.nsf/downloads/Kudos%20Downloads).
 

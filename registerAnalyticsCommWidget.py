@@ -13,14 +13,17 @@ def registerAnalyticsCommWidget():
     kudosContext = "Kudos" # Change this if you have a different context root than https://servername/Kudos/
     secureKudosRoot = "https://"+servername+"/"+kudosContext
     analyticsWidgetURL = secureKudosRoot+"/AnalyticsDashboard.xml"
+    badgesConfigURL	= secureKudosRoot+"/BadgesConfigurator.xml"
 
     print "\n"
     print "Server name is: "+servername
     print "\n--Registering Widgets-- "
     print analyticsWidgetURL
+    print badgesConfigURL
     raw_input("Press ENTER to confirm and continue. CTRL+C to exit.")
 
     NewsWidgetCatalogService.addWidget(   enabled=1,	title="Kudos Analytics",	url=analyticsWidgetURL,	categoryName="profiles", isHomepageSpecific=0,	isDefaultOpened=0,	multipleInstanceAllowed=1,	isGadget=0,	policyFlags=[GadgetPolicyFlags.TRUSTED], 	prereqs=['profiles', 'communities'],	appContexts=["IWIDGETS"])
+    NewsWidgetCatalogService.addWidget(   enabled=1,	title="Kudos Badges Configurator",		url=badgesConfigURL,	 categoryName="profiles", isHomepageSpecific=0,	isDefaultOpened=0,	multipleInstanceAllowed=0,	isGadget=0,	policyFlags=[GadgetPolicyFlags.TRUSTED], 	prereqs=['profiles', 'communities'],	appContexts=["IWIDGETS"])
     NewsWidgetCatalogService.clearWidgetCaches()
 
     print "\nAll clusters running IBM Connections applications need to be restarted after registering widgets.\n"
